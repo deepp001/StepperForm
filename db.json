@@ -1,0 +1,17 @@
+{
+  "data": [
+    {
+      "value": {
+        "0": {
+          "Email": "test@gmail.com",
+          "Name": "wjendjn",
+          "Phone": "1234",
+          "Compony": "aimbrill"
+        },
+        "1": "$10.000 - $20.000",
+        "2": "Marketing"
+      },
+      "id": 1
+    }
+  ]
+}
