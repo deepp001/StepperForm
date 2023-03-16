@@ -34,7 +34,6 @@ const MuiCard = ({ value, onChange, onNegChange, comp }) => {
     const updatedData = [...data, response.data];
     setFinalData(updatedData);
   };
-  // console.log(FinalData);
 
   const formik = useFormik({
     initialValues: {
@@ -66,44 +65,6 @@ const MuiCard = ({ value, onChange, onNegChange, comp }) => {
   if (comp === 3) {
     Content = <Cardcomp onChange={finalcreateData} data={data} />;
   }
-  // let Buttons = (
-  //   <>
-  //     <ButtonsTheme variant="contained" type="submit" onClick={onHandleClick}>
-  //       Next Step
-  //     </ButtonsTheme>
-  //   </>
-  // );
-  // if (comp === 1) {
-  //   Buttons = (
-  //     <>
-  //       <ButtonsTheme variant="outlined" onClick={onNegChange}>
-  //         Previoues Step
-  //       </ButtonsTheme>
-  //       <ButtonsTheme variant="contained" onClick={onChange}>
-  //         Next Step
-  //       </ButtonsTheme>
-  //     </>
-  //   );
-  // }
-  // if (comp === 2) {
-  //   Buttons = (
-  //     <>
-  //       <ButtonsTheme variant="outlined" onClick={onNegChange}>
-  //         Previoues Step
-  //       </ButtonsTheme>
-  //       <ButtonsTheme variant="contained" onClick={onChange}>
-  //         Next Step
-  //       </ButtonsTheme>
-  //     </>
-  //   );
-  // }
-  // if (comp === 3) {
-  //   Buttons = (
-  //     <ButtonsTheme variant="outlined" onClick={onNegChange}>
-  //       Previoues Step
-  //     </ButtonsTheme>
-  //   );
-  // }
 
   return (
     <>
@@ -138,15 +99,12 @@ const MuiCard = ({ value, onChange, onNegChange, comp }) => {
                 alignItems: "center",
               }}
             >
-              {/* {Buttons} */}
-
               <ButtonsTheme variant="outlined" onClick={onNegChange}>
                 Previoues Step
               </ButtonsTheme>
               <ButtonsTheme
                 variant="contained"
                 type="submit"
-                // disabled={!formik.isValid}
                 onClick={onHandleClick}
               >
                 Next Step

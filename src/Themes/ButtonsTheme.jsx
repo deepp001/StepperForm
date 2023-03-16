@@ -42,7 +42,6 @@ export default function GlobalThemeVariants({
     <ThemeProvider theme={theme}>
       <Button
         onClick={onClick}
-        // value={value}
         type={type}
         variant={variant}
         sx={{ m: 1 }}

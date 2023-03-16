@@ -12,22 +12,5 @@ const COLUMNS = [
     Header: "Title",
     accessor: "title",
   },
-
-  // {
-  //   Header: "Price",
-  //   accessor: "price",
-  // },
-  // {
-  //   Header: "Discription",
-  //   accessor: "description",
-  // },
-  // {
-  //   Header: "Rating",
-  //   accessor: "rating.rate",
-  // },
-  // {
-  //   Header: "completed",
-  //   accessor: "completed",
-  // },
 ];
 export default COLUMNS;

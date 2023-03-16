@@ -152,16 +152,6 @@ const BasicTable = () => {
             </Select>
           </FormControl>
         </Box>
-        {/* <select
-          value={pageSize}
-          onChange={(e) => setPageSize(Number(e.target.value))}
-        >
-          {[1, 5, 10].map((pageSize) => (
-            <option key={pageSize} value={pageSize}>
-              Show {pageSize}
-            </option>
-          ))}
-        </select> */}
         <nav>
           <form onSubmit={handlSortSubmit}>
             <TextField
@@ -179,7 +169,6 @@ const BasicTable = () => {
           </ButtonsTheme>
         </nav>
       </Box>
-      {/* <ButtonsTheme variant="contained">Next Step</ButtonsTheme> */}
     </>
   );
 };

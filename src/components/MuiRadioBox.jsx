@@ -13,16 +13,14 @@ const MuiRadioBox = ({ onChange }) => {
   const [value, setValue] = useState("");
 
   const handleChange = (event) => {
-    // formik.setFieldValue(event.target.value);
     setValue(event.target.value);
     console.log(event.target.value);
     const value = event.target.value;
     onChange(value);
   };
-  const handleSubmit = (event) => {};
+
   return (
     <Box>
-      {/* <form onSubmit={handleSubmit}> */}
       <Box my={3}>
         <Typography variant="h5">What's your project budget?</Typography>
         <Typography variant="subtitle2">
@@ -34,16 +32,8 @@ const MuiRadioBox = ({ onChange }) => {
           aria-labelledby="demo-radio-buttons-group-label"
           defaultValue="female"
           name="radio-buttons-group"
-          value={
-            // formik.values
-            value
-          }
-          onChange={
-            handleChange
-            // (event) => {
-            // formik.setFieldValue(event.target.value);
-            // }
-          }
+          value={value}
+          onChange={handleChange}
         >
           <Grid container>
             <Grid item xs={6}>
@@ -85,8 +75,6 @@ const MuiRadioBox = ({ onChange }) => {
           </Grid>
         </RadioGroup>
       </FormControl>
-      {/* <button type="submit">submit</button> */}
-      {/* </form> */}
     </Box>
   );
 };

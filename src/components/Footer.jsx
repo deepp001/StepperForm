@@ -1,7 +1,7 @@
 import { Box, InputAdornment, TextField, Typography } from "@mui/material";
 import React from "react";
 import FooterLogo from "../Assets/Svg/FooterLogo.svg";
-import MuiButtons from "./MuiButtons";
+
 import ButtonsTheme from "../Themes/ButtonsTheme";
 
 const Footer = () => {
@@ -21,7 +21,6 @@ const Footer = () => {
             endAdornment: (
               <InputAdornment position="end">
                 <ButtonsTheme variant="contained">Subscribe</ButtonsTheme>
-                {/* <MuiButtons>Subscribe</MuiButtons> */}
               </InputAdornment>
             ),
           }}

@@ -3,7 +3,6 @@ import React from "react";
 import MuiCard from "../components/MuiCard";
 import Title from "../components/Title";
 
-import MuiButtons from "../components/MuiButtons";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 

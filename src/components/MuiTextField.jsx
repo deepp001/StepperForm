@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import { Button, Stack, TextField } from "@mui/material";
+import React from "react";
+import { Stack, TextField } from "@mui/material";
 import MuiTypography from "./MuiTypography";
-import TextInputTheme from "../Themes/TextInputTheme";
+
 import * as yup from "yup";
-import { useFormik } from "formik";
-import ButtonsTheme from "../Themes/ButtonsTheme";
 
 const validationSchema = yup.object({
   Email: yup
@@ -17,22 +15,10 @@ const validationSchema = yup.object({
 });
 
 const MuiTextField = ({ formik }) => {
-  // const formik = useFormik({
-  //   initialValues: {
-  //     Email: "",
-  //     Name: "",
-  //     Phone: "",
-  //     Compony: "",
-  //   },
-  //   validationSchema: validationSchema,
-  //   onSubmit: (values) => {
-  //     console.log(values);
-  //   },
-  // });
   return (
     <>
       <MuiTypography />
-      {/* <form onSubmit={formik.handleSubmit}> */}
+
       <Stack direction="column" spacing={4}>
         <Stack direction="row" spacing={4}>
           <TextField
@@ -102,8 +88,6 @@ const MuiTextField = ({ formik }) => {
           ></TextField>
         </Stack>
       </Stack>
-      {/* <ButtonsTheme type="submit">submit</ButtonsTheme> */}
-      {/* </form> */}
     </>
   );
 };

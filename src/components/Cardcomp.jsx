@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import CardImage from "../Assets/Svg/CardImg.svg";
-import MuiButtons from "./MuiButtons";
+
 import ButtonsTheme from "../Themes/ButtonsTheme";
 
 const Cardcomp = ({ onChange, data }) => {
