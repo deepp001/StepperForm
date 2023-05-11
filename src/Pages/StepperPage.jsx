@@ -6,17 +6,18 @@ import Title from "../components/Title";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
-const StepperPage = ({ value, onNegChange, onChange, comp }) => {
+const StepperPage = ({ value, onNegChange, onChange, comp, valueOfTheme }) => {
   return (
-    <Box>
+    <Box bgcolor={"background.default"} color={"text.primary"}>
       <Header />
 
-      <Title />
+      <Title valueOfTheme={valueOfTheme} />
       <MuiCard
         value={value}
         onNegChange={onNegChange}
         onChange={onChange}
         comp={comp}
+        valueOfTheme={valueOfTheme}
       />
       <Footer />
     </Box>

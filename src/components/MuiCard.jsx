@@ -7,7 +7,7 @@ import MuiRadioBox from "./MuiRadioBox";
 import MuiRadioBox2 from "./MuiRadioBox2";
 import Cardcomp from "./CardComp";
 import ButtonsTheme from "../Themes/ButtonsTheme";
-import { Formik, useFormik } from "formik";
+import { useFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
 
@@ -20,7 +20,7 @@ const validationSchema = yup.object({
   Phone: yup.number("Enter your Phone").required("Phone is required"),
   Compony: yup.string("Enter your Compony").required("Compony is required"),
 });
-const MuiCard = ({ value, onChange, onNegChange, comp }) => {
+const MuiCard = ({ value, onChange, onNegChange, comp, valueOfTheme }) => {
   const [data, setData] = useState([]);
 
   const [FinalData, setFinalData] = useState([]);
@@ -65,54 +65,109 @@ const MuiCard = ({ value, onChange, onNegChange, comp }) => {
   if (comp === 3) {
     Content = <Cardcomp onChange={finalcreateData} data={data} />;
   }
+  let content = (
+    <form onSubmit={formik.handleSubmit}>
+      <Stack>
+        <Stack
+          sx={{
+            display: "flex",
+            margin: "2",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            my={3}
+            sx={{
+              border: 1,
+              borderColor: "white",
+              borderRadius: 10,
+              width: 500,
+              height: 400,
+              padding: 3,
+            }}
+          >
+            <MuiStepper value={value} onChange={onChange} />
 
-  return (
-    <>
-      <form onSubmit={formik.handleSubmit}>
-        <Stack>
-          <Stack
+            {Content}
+          </Box>
+          <Box
             sx={{
               display: "flex",
-              margin: "2",
-              justifyContent: "space-around",
+              justifyContent: "space-between",
               alignItems: "center",
             }}
           >
-            <Box
-              my={3}
-              sx={{
-                border: 1,
-                borderRadius: 10,
-                width: 500,
-                height: 400,
-                padding: 3,
-              }}
+            <ButtonsTheme variant="outlined" onClick={onNegChange}>
+              Previoues Step
+            </ButtonsTheme>
+            <ButtonsTheme
+              variant="contained"
+              type="submit"
+              onClick={onHandleClick}
             >
-              <MuiStepper value={value} onChange={onChange} />
-
-              {Content}
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <ButtonsTheme variant="outlined" onClick={onNegChange}>
-                Previoues Step
-              </ButtonsTheme>
-              <ButtonsTheme
-                variant="contained"
-                type="submit"
-                onClick={onHandleClick}
-              >
-                Next Step
-              </ButtonsTheme>
-            </Box>
-          </Stack>
+              Next Step
+            </ButtonsTheme>
+          </Box>
         </Stack>
-      </form>
+      </Stack>
+    </form>
+  );
+
+  return (
+    <>
+      <div>
+        {valueOfTheme === false ? (
+          <div>{content}</div>
+        ) : (
+          <form onSubmit={formik.handleSubmit}>
+            <Stack>
+              <Stack
+                sx={{
+                  display: "flex",
+                  margin: "2",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                }}
+              >
+                <Box
+                  my={3}
+                  sx={{
+                    border: 1,
+                    borderColor: "black",
+                    borderRadius: 10,
+                    width: 500,
+                    height: 400,
+                    padding: 3,
+                  }}
+                >
+                  <MuiStepper value={value} onChange={onChange} />
+
+                  {Content}
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <ButtonsTheme variant="outlined" onClick={onNegChange}>
+                    Previoues Step
+                  </ButtonsTheme>
+                  <ButtonsTheme
+                    variant="contained"
+                    type="submit"
+                    onClick={onHandleClick}
+                  >
+                    Next Step
+                  </ButtonsTheme>
+                </Box>
+              </Stack>
+            </Stack>
+          </form>
+        )}
+      </div>
     </>
   );
 };

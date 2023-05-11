@@ -7,6 +7,7 @@ const AdminPage = () => {
   const onStepper = () => {
     navigate("/");
   };
+
   return (
     <div>
       <ButtonsTheme onClick={onStepper} variant="contained">
